@@ -10,7 +10,16 @@ Follow the install instrations [here](https://github.com/dflydev/git-subsplit).
 
 ## Initialize your subtrees with subsplit
 
-### 1 - remove existing subsplit configuration directory
+### Add your sub repositories
+
+```bash
+ git subtree add --prefix=packages/sub1 git@github.com:christian-graf/sub1.git master
+ git subtree add --prefix=packages/sub2 git@github.com:christian-graf/sub2.git master
+
+ git push
+```
+
+### Remove existing subsplit configuration directory
 
 `Windows user / powershell`
 ```powershell
@@ -23,7 +32,7 @@ rm -Recurse -Force .\.subsplit\
 rm -rf .subsplit/
 ```
 
-### 2 - init subsplit
+### Init subsplit
 
 ```bash
 git subsplit init git@github.com:christian-graf/mono.git
@@ -33,10 +42,12 @@ git subsplit init git@github.com:christian-graf/mono.git
 
 ```bash
 git subsplit update --heads="master" packages/sub1:git@github.com:christian-graf/sub1.git
+git subsplit update --heads="master" packages/sub2:git@github.com:christian-graf/sub2.git
 ```
 
 ## Publish subtrees with subsplit
 
 ```bash
 git subsplit publish --heads="master" packages/sub1:git@github.com:christian-graf/sub1.git
+git subsplit publish --heads="master" packages/sub2:git@github.com:christian-graf/sub2.git
 ```
