@@ -50,3 +50,10 @@ git subsplit update
 git subsplit publish --heads="master" --no-tags packages/sub1:git@github.com:christian-graf/sub1.git
 git subsplit publish --heads="master" --no-tags packages/sub2:git@github.com:christian-graf/sub2.git
 ```
+
+### Publish with subtree
+
+```bash
+git subtree push --prefix=packages/sub1 git@github.com:christian-graf/sub1.git master
+git subtree push --prefix=packages/sub2 git@github.com:christian-graf/sub2.git master
+```
