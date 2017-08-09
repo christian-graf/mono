@@ -41,13 +41,12 @@ git subsplit init git@github.com:christian-graf/mono.git
 ## Update subtrees with subsplit
 
 ```bash
-git subsplit update --heads="master" packages/sub1:git@github.com:christian-graf/sub1.git
-git subsplit update --heads="master" packages/sub2:git@github.com:christian-graf/sub2.git
+git subsplit update
 ```
 
 ## Publish subtrees with subsplit
 
 ```bash
-git subsplit publish --heads="master" packages/sub1:git@github.com:christian-graf/sub1.git
-git subsplit publish --heads="master" packages/sub2:git@github.com:christian-graf/sub2.git
+git subsplit publish --heads="master" --no-tags packages/sub1:git@github.com:christian-graf/sub1.git
+git subsplit publish --heads="master" --no-tags packages/sub2:git@github.com:christian-graf/sub2.git
 ```
