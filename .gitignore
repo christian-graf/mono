@@ -22,3 +22,6 @@
 # Evironment
 /.vagrant
 /.cache
+
+# Git
+/.subsplit
