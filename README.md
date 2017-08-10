@@ -1,14 +1,6 @@
-# Test of an monolithic repository 
+# Test of an monolithic repository with subtrees
 
-## Installation
-
-### First time only
-
-I am using the following git extension to work with subtrees.
-Follow the install instrations [here](https://github.com/dflydev/git-subsplit).
-
-
-## Initialize your subtrees with subsplit
+## Initialize your subtrees
 
 ### Add your sub repositories
 
@@ -19,41 +11,22 @@ Follow the install instrations [here](https://github.com/dflydev/git-subsplit).
  git push
 ```
 
-### Remove existing subsplit configuration directory
-
-`Windows user / powershell`
-```powershell
-rm -Recurse -Force .\.subsplit\
-
-```
-
-`*ix user / bash`
-```bash
-rm -rf .subsplit/
-```
-
-### Init subsplit
-
-```bash
-git subsplit init git@github.com:christian-graf/mono.git
-```
-
-## Update subtrees with subsplit
-
-```bash
-git subsplit update
-```
-
-## Publish subtrees with subsplit
-
-```bash
-git subsplit publish --heads="master" --no-tags packages/sub1:git@github.com:christian-graf/sub1.git
-git subsplit publish --heads="master" --no-tags packages/sub2:git@github.com:christian-graf/sub2.git
-```
-
-### Publish with subtree
+## Publish subtrees
 
 ```bash
 git subtree push --prefix=packages/sub1 git@github.com:christian-graf/sub1.git master
 git subtree push --prefix=packages/sub2 git@github.com:christian-graf/sub2.git master
 ```
+
+## Git extension `subsplit`
+
+While checking how laravel handles its repositories i found some interesting git extension
+
+[Subsplit](https://github.com/dflydev/git-subsplit)
+
+## Links
+
+- [Git-Tools-Subtree-Merging](https://git-scm.com/book/en/v1/Git-Tools-Subtree-Merging)
+- [a git subtrees tutorial](https://medium.com/@v/git-subtrees-a-tutorial-6ff568381844)
+- [using git subtrees for repository seperation](https://makingsoftware.wordpress.com/2013/02/16/using-git-subtrees-for-repository-separation/)
+
